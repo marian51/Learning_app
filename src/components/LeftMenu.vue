@@ -56,6 +56,9 @@
 	/* align-items: center; */
 	/* padding: 3rem; */
 	padding-top: 5rem;
+	height: 85vh;
+	top: 0;
+	position: sticky;
 }
 
 .logo {
