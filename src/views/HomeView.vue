@@ -1,12 +1,13 @@
 <script setup>
 import TheWelcome from "../components/TheWelcome.vue";
+import LeftMenu from "../components/LeftMenu.vue";
 import Chapter from "../components/Chapter.vue";
 import TableOfContent from "../components/TableOfContent.vue";
 </script>
 
 <template>
   <main class="container">
-    <div class="left-menu">Left menu</div>
+    <LeftMenu />
     <Chapter />
     <TableOfContent />
   </main>
