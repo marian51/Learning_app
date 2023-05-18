@@ -14,7 +14,7 @@
       <div class="chapter-description">
         <p>In this unit you will learn...</p>
         <ul>
-          <li v-for="element in unit.description">{{ element }}</li>
+          <li v-for="element in unit.description" v-bind:key="element">{{ element }}</li>
         </ul>
       </div>
     </div>
@@ -197,18 +197,22 @@ const dialogues = reactive([
   description: "At the main railway station in Copenhagen, Hans is waiting for the train to arrive from Esbjerg. George has traveled to Denmark by boat from Harwich to Esbjerg and is at the moment on the Inter City train. This is the boat train that brings the passengers to Copenhagen. Hans sees a neighbour on the platform.",
   lines: [
     {
+      lineNumber: 1,
       speaker: 'Hans',
       message: 'Dav Kirsten!'
     },
     {
+      lineNumber: 2,
       speaker: 'Kirsten',
       message: 'Hej Hans! Er det i dag, jeres venner fra England kommer?'
     },
     {
+      lineNumber: 3,
       speaker: 'Hans',
       message: 'Ja, George kommer i dag. Alison kommer på fredag. Hun flyver herover.'
     },
     {
+      lineNumber: 4,
       speaker: 'Kirsten',
       message: 'Min mor kommer også med toget fra Jylland. Hun skal bo hos os i en uge.'
     },
@@ -307,10 +311,12 @@ const dialogues = reactive([
   description: "Kirsten wants to do some shopping before the shops close and ask if Hans can give her mother a lift. Hans is pleased to help, but does not know her mother.",
   lines: [
     {
+      lineNumber: 1,
       speaker: 'Hans',
       message: 'Hvad hedder din mor?'
     },
     {
+      lineNumber: 2,
       speaker: 'Kirsten',
       message: 'Hun hedder Marie Sorensen, og hun kommer fra Herning.'
     }
@@ -332,22 +338,27 @@ const dialogues = reactive([
   description: "Kirsten leaves and the train arrives shortly afterwards.",
   lines: [
     {
+      lineNumber: 1,
       speaker: 'Hans',
       message: 'Hej Geogre! Vellkommen til Denmark!'
     },
     {
+      lineNumber: 2,
       speaker: 'Geogre',
       message: 'Hej Hans! Tak!'
     },
     {
+      lineNumber: 3,
       speaker: 'Hans',
       message: 'Det er en lang rejse med båd og tog fra England til Kobenhavn.'
     },
     {
+      lineNumber: 4,
       speaker: 'George',
       message: 'Ja, men det er en interessant rejse.'
     },
     {
+      lineNumber: 5,
       speaker: 'Hans',
       message: 'Min nabos mor skal kore med os til Holte.'
     },

@@ -18,14 +18,14 @@
       </div>
     </div>
     <div class="dialogue-main">
-      <div class="dialogue-line" v-for="line in dialogueBody.lines">
+      <div class="dialogue-line" v-for="line in dialogueBody.lines" v-bind:key="line.lineNumber">
         <div class="dialogue-line-speaker">{{ line.speaker }}</div>
         <div class="dialogue-line-message">{{ line.message }}</div>
       </div>
     </div>
     <Transition>
     <div class="dialogue-vocabulary" v-if="isVisible.value">
-      <div class="dialogue-vocabulary-line" v-for="word in dialogueBody.vocabulary">
+      <div class="dialogue-vocabulary-line" v-for="word in dialogueBody.vocabulary" v-bind:key="word">
         <p>{{ word.danish }}</p>
         <p>{{ word.english }}</p>
       </div>
