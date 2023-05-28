@@ -1,7 +1,9 @@
 <template>
   <div class="wrap">
     <div class="form-container">
-      <form class="form-left" action="">
+      <LoginForm v-if="!signInSignUp.isOpenSignUp" />
+      <RegisterForm v-if="signInSignUp.isOpenSignUp" />
+      <!-- <form class="form-left" action="">
         <h1 class="form-title">Log in</h1>
         <div class="input-wrap">
           <input class="input" type="email" placeholder="Email address" />
@@ -10,17 +12,17 @@
           <input class="input" type="password" placeholder="Password" />
         </div>
         <button type="submit" class="submit-button">Sign in</button>
-        <!-- <div class="multi-button">
-          <button class="multi-button-one">Forgot email</button>
-          <button class="multi-button-one">Forgot password</button>
-        </div> -->
         <button class="submit-button register-button">Register</button>
-      </form>
+      </form> -->
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import LoginForm from "./LoginForm.vue";
+import RegisterForm from "./RegisterForm.vue";
+import { signInSignUp } from "../../stores/signInSignUp";
+</script>
 
 <style>
 .wrap {
@@ -62,6 +64,7 @@
   align-items: center;
 
   background-image: linear-gradient(to right, #e3e4e7, #f8efe3);
+  /* ewo-prawo gora-dol rozmycie kolor */
   box-shadow: 20px 0 20px 5px rgb(0 0 0 / 0.4);
 }
 
@@ -97,6 +100,13 @@ input {
   border: none;
   border-radius: 2rem;
   width: 80%;
+
+  box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.3);
+  transition: 0.2s ease-in-out 0s;
+}
+
+.submit-button:hover {
+  transform: scale(1.15);
 }
 
 .multi-button {
