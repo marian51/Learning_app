@@ -1,19 +1,11 @@
 <template>
   <div class="wrap">
-    <div class="form-container">
+    <div
+      class="form-container"
+      v-bind:class="{ 'fd-row-reverse': signInSignUp.isOpenSignUp }"
+    >
       <LoginForm v-if="!signInSignUp.isOpenSignUp" />
       <RegisterForm v-if="signInSignUp.isOpenSignUp" />
-      <!-- <form class="form-left" action="">
-        <h1 class="form-title">Log in</h1>
-        <div class="input-wrap">
-          <input class="input" type="email" placeholder="Email address" />
-        </div>
-        <div class="input-wrap">
-          <input class="input" type="password" placeholder="Password" />
-        </div>
-        <button type="submit" class="submit-button">Sign in</button>
-        <button class="submit-button register-button">Register</button>
-      </form> -->
     </div>
   </div>
 </template>
@@ -50,6 +42,10 @@ import { signInSignUp } from "../../stores/signInSignUp";
 
   border-radius: 1.8rem;
   overflow: hidden;
+}
+
+.fd-row-reverse {
+  flex-direction: row-reverse;
 }
 
 .form-left {
